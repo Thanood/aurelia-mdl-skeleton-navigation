@@ -1,0 +1,18 @@
+<template class="mdl-layout mdl-layout-js">
+  <header class="mdl-layout__header">
+    <div class="mdl-layout-icon"></div>
+    <div class="mdl-layout__header-row">
+      <span class="mdl-layout-title">${router.title}</span>
+      <div class="mdl-layout-spacer"></div>
+      <nav class="mdl-navigation">
+        <a class="mdl-navigation__link" repeat.for="row of router.navigation" href.bind="row.href">${row.title}</a>
+      </nav>
+    </div>
+  </header>
+  <div class="mdl-layout__drawer">
+      <span class="mdl-layout-title">${router.title}</span>
+  </div>
+  <main class="mdl-layout__content">
+    <router-view></router-view>
+  </main>
+</template>
