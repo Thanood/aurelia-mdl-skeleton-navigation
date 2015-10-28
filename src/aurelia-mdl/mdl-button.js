@@ -14,7 +14,7 @@ export class MdlButton {
         this.raised = (newValue === 'true' || newValue === '');
     }
     rippleChanged(newValue, oldValue) {
-        this.ripple = (newValue == 'true' || newValue === '');
+        this.ripple = (newValue === 'true' || newValue === '');
     }
     attached() {
         let target = this.element.querySelector('button');
