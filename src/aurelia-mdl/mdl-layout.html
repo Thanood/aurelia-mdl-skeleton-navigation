@@ -1,4 +1,7 @@
 <template class="mdl-layout mdl-layout-js">
+    <require from="./mdl-drawer.html"></require>
+    <require from="./mdl-main.html"></require>
+
   <header class="mdl-layout__header">
     <div class="mdl-layout-icon"></div>
     <div class="mdl-layout__header-row">
@@ -9,10 +12,8 @@
       </nav>
     </div>
   </header>
-  <div class="mdl-layout__drawer">
-      <span class="mdl-layout-title">${router.title}</span>
-  </div>
-  <main class="mdl-layout__content">
+  <mdl-drawer title.bind="router.title"></mdl-drawer>
+  <mdl-main>
     <router-view></router-view>
-  </main>
+  </mdl-main>
 </template>
