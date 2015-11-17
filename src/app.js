@@ -9,4 +9,7 @@ export class App {
 
     this.router = router;
   }
+  // attached() {
+  //     window.setTimeout(() => { this.router.title = 'nase'; }, 2000);
+  // }
 }

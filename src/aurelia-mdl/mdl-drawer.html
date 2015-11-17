@@ -1,5 +1,10 @@
-<template bindable="title">
-<div class="mdl-layout__drawer">
-    <span class="mdl-layout-title">${title}</span>
-</div>
+<template bindable="title,router" class="mdl-layout__drawer">
+    <header class="mdl-layout__header">
+        <div class="mdl-layout__header-row">
+            <span class="mdl-layout-title">${title}</span>
+        </div>
+    </header>
+    <nav class="mdl-navigation">
+      <a class="mdl-navigation__link ${row.isActive ? 'active' : ''}" repeat.for="row of router.navigation" href.bind="row.href">${row.title}</a>
+    </nav>
 </template>
