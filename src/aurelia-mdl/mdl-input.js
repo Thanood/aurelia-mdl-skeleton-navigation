@@ -2,18 +2,16 @@ import { componentHandler } from 'material-design-lite';
 import 'material-design-lite/material.css!';
 import { bindable, customElement, inject } from 'aurelia-framework';
 
-@customElement('mdl-text')
+@customElement('mdl-input')
 @inject(Element)
-export class MdlText {
+export class MdlInput {
     static _id = 0;
 
-    @bindable() label;
-    @bindable() value;
+    @bindable() label = '';
+    @bindable() value = '';
     constructor(element) {
-        this.id = 'MdlText_' + MdlText._id++;
+        this.id = 'MdlInput_' + MdlInput._id++;
         this.element = element;
-        this.label = '';
-        this.value = '';
     }
     attached() {
         componentHandler.upgradeElement(this.element);

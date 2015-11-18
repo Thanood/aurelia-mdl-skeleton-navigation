@@ -1,13 +1,13 @@
 <template>
     <require from="./aurelia-mdl/mdl-button"></require>
-    <require from="./aurelia-mdl/mdl-text"></require>
+    <require from="./aurelia-mdl/mdl-input"></require>
 
   <section class="au-animate">
     <h2>${heading}</h2>
     <form role="form" submit.delegate="submit()">
 
-        <mdl-text value.two-way="firstName" label="First Name"></mdl-text>
-        <mdl-text value.two-way="lastName" label="Last Name"></mdl-text>
+        <mdl-input value.two-way="firstName" label="First Name"></mdl-input>
+        <mdl-input value.two-way="lastName" label="Last Name"></mdl-input>
 
       <div class="form-group">
         <label for="fn">First Name</label>
