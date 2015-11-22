@@ -1,4 +1,5 @@
-//import {computedFrom} from 'aurelia-framework';
+// import {computedFrom} from 'aurelia-framework';
+// import { MdlToastService } from './aurelia-mdl/mdl-toast'; // seems not to be active yet
 
 export class Welcome {
   
@@ -11,6 +12,9 @@ export class Welcome {
     this.firstNameLabel = 'First Name';
     this.lastNameLabel = 'Last Name';
     this.showRaised = true;
+    
+    // seems not to be active yet
+    // this.toast = new MdlToastService();
   }
 
   //Getters can't be directly observed, so they must be dirty checked.
@@ -31,6 +35,8 @@ export class Welcome {
   submit() {
     this.previousValue = this.fullName;
     alert(`Welcome, ${this.fullName}!`);
+    // seems not to be active yet
+    // this.toast.notify(`Welcome, ${this.fullName}!`);
   }
 
   canDeactivate() {
