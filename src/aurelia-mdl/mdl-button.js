@@ -3,6 +3,9 @@ import 'material-design-lite';
 
 @inject(Element)
 export class MdlButton {
+    @bindable() accent = false;
+    @bindable() colored = false;
+    @bindable() primary = false;
     @bindable() raised = true;
     @bindable() ripple = true;
     constructor(element) {
@@ -10,6 +13,15 @@ export class MdlButton {
     }
     attached() {
         let btn = this.element.querySelector('button');
+        if (this.accent) {
+            btn.classList.add('mdl-button--accent');
+        }
+        if (this.colored) {
+            btn.classList.add('mdl-button--colored');
+        }
+        if (this.primary) {
+            btn.classList.add('mdl-button--primary');
+        }
         if (this.raised) {
             btn.classList.add('mdl-button--raised');
         }

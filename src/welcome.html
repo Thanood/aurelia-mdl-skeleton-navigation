@@ -1,27 +1,39 @@
 <template>
     <require from="./aurelia-mdl/mdl-button"></require>
     <require from="./aurelia-mdl/mdl-input"></require>
+    <require from="./aurelia-mdl/mdl-switch"></require>
 
-  <section class="au-animate">
-    <h2>${heading}</h2>
-    <form role="form" submit.delegate="submit()">
+    <section class="au-animate">
+        <h2>${heading}</h2>
+        <form role="form" submit.delegate="submit()">
 
-        <mdl-input value.bind="firstName" label="${firstNameLabel}"></mdl-input>
-        <mdl-input value.bind="lastName" label="${lastNameLabel}"></mdl-input>
+            <mdl-input value.bind="firstName" label="${firstNameLabel}"></mdl-input>
+            <mdl-input value.bind="lastName" label="${lastNameLabel}"></mdl-input>
 
-      <div class="form-group">
-        <label for="fn">First Name</label>
-        <input type="text" value.bind="firstName" class="form-control" id="fn" placeholder="first name">
-      </div>
-      <div class="form-group">
-        <label for="ln">Last Name</label>
-        <input type="text" value.bind="lastName" class="form-control" id="ln" placeholder="last name">
-      </div>
-      <div class="form-group">
-        <label>Full Name</label>
-        <p class="help-block">${fullName | upper}</p>
-      </div>
-      <mdl-button raised.bind="showRaised" ripple.bind="true" click.trigger="submit()">Submit</mdl-button>
-    </form>
-  </section>
+            <!--<div class="form-group">
+                <label>Full Name</label>
+                <p class="help-block">${fullName | upper}</p>
+            </div>-->
+            
+            <div class="mdl-card mdl-shadow--2dp">
+                <div class="mdl-card__supporting-text">Full Name</div>
+                <div class="mdl-card__title">
+                    <h2 class="mdl-card__title-text">${fullName | upper}</h2>
+                </div>
+                <div class="mdl-card__actions mdl-card--border">
+                    <mdl-button raised.bind="showRaised" ripple.bind="true" click.trigger="submit()">Submit</mdl-button>
+                    <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" click.trigger="submit()">
+                        Second Submit
+                    </a>
+                    <div style="margin-top: 15px;">
+                        <!--<label class="mdl-switch mdl-js-switch mdl-js-ripple-effect" for="raised-switch">
+                            <input type="checkbox" id="raised-switch" class="mdl-switch__input" checked.bind="showRaised" />
+                            <span class="mdl-switch__label"></span>
+                        </label>-->
+                        <mdl-switch checked.bind="showRaised">raised button</mdl-switch>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </section>
 </template>
