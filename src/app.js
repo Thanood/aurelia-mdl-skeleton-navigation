@@ -1,3 +1,5 @@
+import 'material-design-lite';
+
 export class App {
   configureRouter(config, router) {
     config.title = 'Aurelia Navigation';
@@ -9,7 +11,8 @@ export class App {
 
     this.router = router;
   }
-  // attached() {
-  //     window.setTimeout(() => { this.router.title = 'nase'; }, 2000);
-  // }
+  attached() {
+      componentHandler.upgradeDom();
+      window.setTimeout(() => { this.router.title = 'changed title'; }, 2000);
+  }
 }

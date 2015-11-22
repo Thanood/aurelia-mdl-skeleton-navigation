@@ -1,29 +1,31 @@
-import { bindable, containerless, customElement, inject } from 'aurelia-framework';
-import { componentHandler } from 'material-design-lite';
+import { bindable, inject } from 'aurelia-framework';
+import 'material-design-lite';
 
-// @containerless
-@customElement('mdl-button')
 @inject(Element)
 export class MdlButton {
-    @bindable() raised = false;
-    @bindable() ripple = false;
+    @bindable() raised = true;
+    @bindable() ripple = true;
     constructor(element) {
         this.element = element;
     }
-    raisedChanged(newValue, oldValue) {
-        this.raised = (newValue === 'true' || newValue === '');
-    }
-    rippleChanged(newValue, oldValue) {
-        this.ripple = (newValue === 'true' || newValue === '');
-    }
     attached() {
-        let target = this.element.querySelector('button');
+        let btn = this.element.querySelector('button');
         if (this.raised) {
-            target.classList.add('mdl-button--raised');
+            btn.classList.add('mdl-button--raised');
         }
         if (this.ripple) {
-            target.classList.add('mdl-js-ripple-effect');
+            btn.classList.add('mdl-js-ripple-effect');
         }
-        componentHandler.upgradeElement(target);
+        componentHandler.upgradeElement(btn);
+    }
+    raisedChanged(newValue, oldValue) {
+        console.log('mdl-button', 'raisedChanged from', oldValue, 'to', newValue);
+        let btn = this.element.querySelector('button');
+        if (newValue) {
+            btn.classList.add('mdl-button--raised');
+        } else {
+            btn.classList.remove('mdl-button--raised');
+        }
+        // componentHandler.upgradeElement(btn);
     }
 }

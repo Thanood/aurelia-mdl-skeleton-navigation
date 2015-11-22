@@ -7,6 +7,10 @@ export class Welcome {
     this.firstName = 'John';
     this.lastName = 'Doe';
     this.previousValue = this.fullName;
+    
+    this.firstNameLabel = 'First Name';
+    this.lastNameLabel = 'Last Name';
+    this.showRaised = true;
   }
 
   //Getters can't be directly observed, so they must be dirty checked.
@@ -19,7 +23,9 @@ export class Welcome {
   }
 
   attached() {
-    //   document.querySelector('mdl-button').addEventListener('click', this.submit);
+    window.setTimeout(() => this.showRaised = false, 1000);
+    window.setTimeout(() => this.firstNameLabel = 'Vorname', 1000);
+    window.setTimeout(() => this.lastNameLabel = 'Nachname', 1000);
   }
 
   submit() {

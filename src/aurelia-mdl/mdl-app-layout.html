@@ -1,11 +1,14 @@
-<template class="mdl-layout mdl-js-layout mdl-layout--fixed-drawer mdl-layout--fixed-header">
-    <require from="./mdl-drawer.html"></require>
-    <require from="./mdl-main.html"></require>
+<template bindable="router" class="mdl-layout mdl-js-layout mdl-layout--fixed-drawer mdl-layout--fixed-header">
+    <require from="material-design-lite/material.css"></require>
     <require from="./mdl-header.html"></require>
-
-  <mdl-header router.bind="router"></mdl-header>
-  <mdl-drawer title="Navigation" router.bind="router"></mdl-drawer>
-  <mdl-main>
-    <router-view></router-view>
-  </mdl-main>
+    <require from="./mdl-drawer.html"></require>
+    <require from="./mdl-content.html"></require>
+    
+    <mdl-header></mdl-header>
+    <mdl-drawer title.bind="router.title"></mdl-drawer>
+    <mdl-content>
+        <div class="page-content">
+            <router-view></router-view>
+        </div>
+    </mdl-content>
 </template>

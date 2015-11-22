@@ -6,8 +6,8 @@
     <h2>${heading}</h2>
     <form role="form" submit.delegate="submit()">
 
-        <mdl-input value.two-way="firstName" label="First Name"></mdl-input>
-        <mdl-input value.two-way="lastName" label="Last Name"></mdl-input>
+        <mdl-input value.bind="firstName" label="${firstNameLabel}"></mdl-input>
+        <mdl-input value.bind="lastName" label="${lastNameLabel}"></mdl-input>
 
       <div class="form-group">
         <label for="fn">First Name</label>
@@ -21,7 +21,7 @@
         <label>Full Name</label>
         <p class="help-block">${fullName | upper}</p>
       </div>
-      <mdl-button raised ripple click.trigger="submit()">Submit</mdl-button>
+      <mdl-button raised.bind="showRaised" ripple.bind="true" click.trigger="submit()">Submit</mdl-button>
     </form>
   </section>
 </template>
