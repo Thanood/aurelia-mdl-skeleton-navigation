@@ -16,7 +16,7 @@
                 <p class="help-block">${fullName | upper}</p>
             </div>-->
             
-            <div class="mdl-card mdl-shadow--2dp">
+            <div ref="card" class="mdl-card mdl-shadow--2dp">
                 <div class="mdl-card__supporting-text">Full Name</div>
                 <div mdl-tooltip="text: computed full name;" class="mdl-card__title">
                     <h2 class="mdl-card__title-text">${fullName | upper}</h2>
@@ -26,12 +26,12 @@
                     <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" click.trigger="submit()">
                         Second Submit
                     </a>
-                    <div mdl-tooltip="large: true; text: 'show submit button as raised';" style="margin-top: 15px;">
+                    <div style="margin-top: 15px;">
                         <!--<label class="mdl-switch mdl-js-switch mdl-js-ripple-effect" for="raised-switch">
                             <input type="checkbox" id="raised-switch" class="mdl-switch__input" checked.bind="showRaised" />
                             <span class="mdl-switch__label"></span>
                         </label>-->
-                        <mdl-switch checked.bind="showRaised">raised button</mdl-switch>
+                        <mdl-switch mdl-tooltip="large: true; text: show submit button as raised; container.bind: card;" checked.bind="showRaised">raised button</mdl-switch>
                     </div>
                 </div>
             </div>

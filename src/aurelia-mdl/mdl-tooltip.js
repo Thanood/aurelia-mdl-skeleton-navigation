@@ -8,6 +8,7 @@ export class MdlToolTip {
     
     @bindable() text = '';
     @bindable() large = false;
+    @bindable() container = null;
     
     constructor(element) {
         this.element = element;
@@ -23,7 +24,13 @@ export class MdlToolTip {
         }
         
         let tooltip = `<div class="mdl-tooltip ${this.large ? 'mdl-tooltip--large' : ''}" for="${this.element.id}">${this.text}</div>`;
-        this.element.insertAdjacentHTML('afterend', tooltip);
-        componentHandler.upgradeElement(this.element.parentNode.querySelector('.mdl-tooltip'));
+        let target = this.container || this.element;
+        // if (this.container) {
+        //     this.container.insertAdjacentHTML('afterend', tooltip);
+        // } else {
+        //     this.element.insertAdjacentHTML('afterend', tooltip);
+        // }
+        target.insertAdjacentHTML('afterend', tooltip);
+        componentHandler.upgradeElement(target.parentNode.querySelector('.mdl-tooltip'));
     }
 }
