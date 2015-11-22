@@ -2,7 +2,7 @@ import { componentHandler } from 'material-design-lite';
 import 'material-design-lite/material.css!';
 import { bindable, customElement, inject } from 'aurelia-framework';
 
-@customElement('mdl-layout')
+@customElement('mdl-app-layout')
 @inject(Element)
 export class MdlLayout {
     @bindable() router;
