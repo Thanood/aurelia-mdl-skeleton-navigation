@@ -2,6 +2,7 @@
     <require from="./aurelia-mdl/mdl-button"></require>
     <require from="./aurelia-mdl/mdl-input"></require>
     <require from="./aurelia-mdl/mdl-switch"></require>
+    <require from="./aurelia-mdl/mdl-tooltip"></require>
 
     <section class="au-animate">
         <h2>${heading}</h2>
@@ -17,7 +18,7 @@
             
             <div class="mdl-card mdl-shadow--2dp">
                 <div class="mdl-card__supporting-text">Full Name</div>
-                <div class="mdl-card__title">
+                <div mdl-tooltip="text: computed full name;" class="mdl-card__title">
                     <h2 class="mdl-card__title-text">${fullName | upper}</h2>
                 </div>
                 <div class="mdl-card__actions mdl-card--border">
@@ -25,7 +26,7 @@
                     <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" click.trigger="submit()">
                         Second Submit
                     </a>
-                    <div style="margin-top: 15px;">
+                    <div mdl-tooltip="large: true; text: 'show submit button as raised';" style="margin-top: 15px;">
                         <!--<label class="mdl-switch mdl-js-switch mdl-js-ripple-effect" for="raised-switch">
                             <input type="checkbox" id="raised-switch" class="mdl-switch__input" checked.bind="showRaised" />
                             <span class="mdl-switch__label"></span>
