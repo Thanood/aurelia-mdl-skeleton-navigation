@@ -127,9 +127,9 @@ div.au-stagger {
   border: 2px #FFF solid;
 }
 
-.mdl-navigation__link.active {
+/*.mdl-navigation__link.active {
     background-color: lightskyblue;
-}
+}*/
 
 /* animation definitions */
 @-webkit-keyframes fadeInRight {

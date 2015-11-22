@@ -6,10 +6,9 @@ import { bindable, customElement, inject } from 'aurelia-framework';
 @inject(Element)
 export class MdlLayout {
     @bindable() router;
-    @bindable() title;
+    @bindable() title = 'aurelia-mdl';
     constructor(element) {
         this.element = element;
-        this.title = 'aurelia-mdl';
     }
     attached() {
         componentHandler.upgradeElement(this.element);

@@ -1,17 +1,9 @@
 <template class="mdl-layout mdl-js-layout mdl-layout--fixed-drawer mdl-layout--fixed-header">
     <require from="./mdl-drawer.html"></require>
     <require from="./mdl-main.html"></require>
+    <require from="./mdl-header.html"></require>
 
-  <header class="mdl-layout__header">
-    <div class="mdl-layout-icon"></div>
-    <div class="mdl-layout__header-row">
-      <span class="mdl-layout-title">${router.title}</span>
-      <div class="mdl-layout-spacer"></div>
-      <nav class="mdl-navigation">
-        <a class="mdl-navigation__link ${row.isActive ? 'active' : ''}" repeat.for="row of router.navigation" href.bind="row.href">${row.title}</a>
-      </nav>
-    </div>
-  </header>
+  <mdl-header router.bind="router"></mdl-header>
   <mdl-drawer title="Navigation" router.bind="router"></mdl-drawer>
   <mdl-main>
     <router-view></router-view>
