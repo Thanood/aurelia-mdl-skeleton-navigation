@@ -13,6 +13,6 @@ export class App {
   }
   attached() {
       componentHandler.upgradeDom();
-      window.setTimeout(() => { this.router.title = 'changed title'; }, 2000);
+    //   window.setTimeout(() => { this.router.title = 'changed title'; }, 2000);
   }
 }

@@ -1,0 +1,5 @@
+<template bindable="router" class="mdl-navigation">
+    <a repeat.for="row of router.navigation" class="mdl-navigation__link ${row.isActive ? 'active' : ''}" href.bind="row.href">
+        ${row.title}
+    </a>
+</template>

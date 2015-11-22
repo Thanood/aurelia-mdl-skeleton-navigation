@@ -2,10 +2,13 @@
     <require from="material-design-lite/material.css"></require>
     <require from="./mdl-header.html"></require>
     <require from="./mdl-drawer.html"></require>
+    <require from="./mdl-nav.html"></require>
     <require from="./mdl-content.html"></require>
     
     <mdl-header></mdl-header>
-    <mdl-drawer title.bind="router.title"></mdl-drawer>
+    <mdl-drawer title.bind="router.title">
+        <mdl-nav router.bind="router"></mdl-nav>
+    </mdl-drawer>
     <mdl-content>
         <div class="page-content">
             <router-view></router-view>
