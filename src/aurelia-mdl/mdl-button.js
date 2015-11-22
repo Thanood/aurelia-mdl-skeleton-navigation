@@ -31,7 +31,7 @@ export class MdlButton {
         componentHandler.upgradeElement(btn);
     }
     raisedChanged(newValue, oldValue) {
-        console.log('mdl-button', 'raisedChanged from', oldValue, 'to', newValue);
+        // console.log('mdl-button', 'raisedChanged from', oldValue, 'to', newValue);
         let btn = this.element.querySelector('button');
         if (newValue) {
             btn.classList.add('mdl-button--raised');

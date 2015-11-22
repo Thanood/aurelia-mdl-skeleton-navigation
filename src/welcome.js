@@ -23,7 +23,7 @@ export class Welcome {
   }
 
   attached() {
-    // window.setTimeout(() => this.showRaised = false, 1200);
+    window.setTimeout(() => this.showRaised = false, 1200);
     window.setTimeout(() => this.firstNameLabel = 'Vorname', 1000);
     window.setTimeout(() => this.lastNameLabel = 'Nachname', 1000);
   }

@@ -22,14 +22,18 @@ export class MdlSwitch {
     attached() {
         componentHandler.upgradeElement(this.element.querySelector('label'));
     }
-    // checkedChanged(newValue, oldValue) {
-    //     // update toggle state when changed programmaticaly
-    //     var label = this.element.querySelector('label');
-    //     if (label.MaterialSwitch) {
-    //         label.MaterialSwitch.checkDisabled();
-    //         label.MaterialSwitch.checkToggleState();
-    //     } else {
-    //         // console.warn('MdlSwitch', 'checkedChange', 'no MaterialSwitch property');
-    //     }
-    // }
+    checkedChanged(newValue, oldValue) {
+        // manage "checked" manually to be able to update toggle state when changed programmaticaly
+        let input = this.element.querySelector('input'),
+            label = this.element.querySelector('label');
+            
+        input.checked = newValue;
+            
+        if (label.MaterialSwitch) {
+            label.MaterialSwitch.checkDisabled();
+            label.MaterialSwitch.checkToggleState();
+        } else {
+            // console.warn('MdlSwitch', 'checkedChange', 'no MaterialSwitch property');
+        }
+    }
 }

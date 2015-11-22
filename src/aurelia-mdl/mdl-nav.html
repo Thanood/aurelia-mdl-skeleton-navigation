@@ -1,5 +1,6 @@
 <template bindable="router" class="mdl-navigation">
-    <a repeat.for="row of router.navigation" class="mdl-navigation__link ${row.isActive ? 'active' : ''}" href.bind="row.href">
+    <a repeat.for="row of router.navigation" style="overflow: hidden; position: relative; text-align: left; text-transform: inherit;" class="mdl-navigation__link mdl-js-ripple-effect ${row.isActive ? 'active' : ''}" href.bind="row.href">
         ${row.title}
+        <span class="mdl-ripple"/>
     </a>
 </template>
