@@ -1,0 +1,14 @@
+<template bindable="columns, data">
+    <table class="mdl-data-table mdl-js-data-table">
+        <thead>
+            <tr>
+                <th repeat.for="col of columns" class="mdl-data-table__cell--non-numeric">${col.title}</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr repeat.for="item of data">
+                <td repeat.for="col of columns" class="mdl-data-table__cell--non-numeric">${item[col.field]}</td>
+            </tr>
+        </tbody>
+    </table>
+</template>

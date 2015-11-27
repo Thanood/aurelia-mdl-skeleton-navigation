@@ -3,6 +3,7 @@
     <require from="./aurelia-mdl/mdl-input"></require>
     <require from="./aurelia-mdl/mdl-switch"></require>
     <require from="./aurelia-mdl/mdl-tooltip"></require>
+    <require from="./aurelia-mdl/mdl-table.html"></require>
 
     <section class="au-animate">
         <h2>${heading}</h2>
@@ -35,6 +36,9 @@
                     </div>
                 </div>
             </div>
+            <hr />
+            
+            <mdl-table columns.bind="table.columns" data.bind="table.data" style="height: 200px; overflow: auto; display: block;"></mdl-table>
         </form>
     </section>
 </template>
