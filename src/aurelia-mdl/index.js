@@ -1,4 +1,4 @@
-// import 'material-design-lite';
+import 'material-design-lite/material.css!';
 export function configure(config) {
     config.globalResources('./mdl-app-layout.html');
     config.globalResources('./mdl-button');
