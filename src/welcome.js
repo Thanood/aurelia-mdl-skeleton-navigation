@@ -12,10 +12,10 @@ export class Welcome {
         this.firstNameLabel = 'First Name';
         this.lastNameLabel = 'Last Name';
         this.showRaised = true;
-    
+
         // seems not to be active yet
         // this.toast = new MdlToastService();
-    
+
         this.table = {
             columns: [
                 { title: 'First Name', field: 'firstName' },
@@ -49,8 +49,8 @@ export class Welcome {
 
     attached() {
         window.setTimeout(() => this.showRaised = false, 1200);
-        window.setTimeout(() => this.firstNameLabel = 'Vorname', 1000);
-        window.setTimeout(() => this.lastNameLabel = 'Nachname', 1000);
+        window.setTimeout(() => this.firstNameLabel = "The person's first name", 1000);
+        window.setTimeout(() => this.lastNameLabel = "That same person's last name", 1000);
     }
 
     submit() {
