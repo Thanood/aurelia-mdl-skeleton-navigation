@@ -1,10 +1,4 @@
 <template>
-    <require from="./aurelia-mdl/mdl-button"></require>
-    <require from="./aurelia-mdl/mdl-input"></require>
-    <require from="./aurelia-mdl/mdl-switch"></require>
-    <require from="./aurelia-mdl/mdl-tooltip"></require>
-    <require from="./aurelia-mdl/mdl-table.html"></require>
-
     <section class="au-animate">
         <h2>${heading}</h2>
         <form role="form" submit.delegate="submit()">
@@ -16,7 +10,7 @@
                 <label>Full Name</label>
                 <p class="help-block">${fullName | upper}</p>
             </div>-->
-            
+
             <div ref="card" class="mdl-card mdl-shadow--2dp">
                 <div class="mdl-card__supporting-text">Full Name</div>
                 <div mdl-tooltip="text: computed full name;" class="mdl-card__title">
@@ -37,7 +31,7 @@
                 </div>
             </div>
             <hr />
-            
+
             <mdl-table columns.bind="table.columns" data.bind="table.data" style="height: 200px; overflow: auto; display: block;"></mdl-table>
         </form>
     </section>

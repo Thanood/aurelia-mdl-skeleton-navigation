@@ -1,8 +1,8 @@
 export function configure(aurelia) {
   aurelia.use
     .standardConfiguration()
-    .developmentLogging();
-    // .plugin('aurelia-mdl');
+    .developmentLogging()
+    .feature('aurelia-mdl');
 
   //Uncomment the line below to enable animation.
   //aurelia.use.plugin('aurelia-animator-css');
