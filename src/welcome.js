@@ -12,6 +12,7 @@ export class Welcome {
         this.firstNameLabel = 'First Name';
         this.lastNameLabel = 'Last Name';
         this.showRaised = true;
+        this.sliderValue = 0;
 
         // seems not to be active yet
         // this.toast = new MdlToastService();
