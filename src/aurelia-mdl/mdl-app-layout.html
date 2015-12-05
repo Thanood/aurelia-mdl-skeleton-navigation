@@ -6,7 +6,9 @@
     <require from="./mdl-content.html"></require>
 
     <mdl-layout drawer="fixed" header="fixed">
-        <mdl-header></mdl-header>
+        <mdl-header>
+            <mdl-nav router.bind="router"></mdl-nav>
+        </mdl-header>
         <mdl-drawer title.bind="router.title">
             <mdl-nav router.bind="router"></mdl-nav>
         </mdl-drawer>
