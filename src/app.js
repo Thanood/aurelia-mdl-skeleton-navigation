@@ -1,6 +1,9 @@
 import 'material-design-lite';
 
 export class App {
+    constructor() {
+        this.rippleDuration = 1.3;
+    }
   configureRouter(config, router) {
     config.title = 'Aurelia Navigation';
     config.map([
