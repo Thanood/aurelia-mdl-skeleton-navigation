@@ -4,6 +4,7 @@
 export class Welcome {
 
     constructor() {
+        this.badgeNum = 2; 
         this.heading = 'Welcome to the Aurelia Navigation App!';
         this.firstName = 'John';
         this.lastName = 'Doe';

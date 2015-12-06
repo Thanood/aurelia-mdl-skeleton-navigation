@@ -32,7 +32,7 @@
             </div>
             <hr />
             <!-- not sure why this needs to be span - div doesn't work -->
-            <span mdl-badge="num: 2;">badge test</span>
+            <span mdl-badge="num.bind: badgeNum;">badge test</span><mdl-input label="badge value" value.bind="badgeNum"></mdl-input>
             <mdl-slider style="width: 300px;" value.bind="sliderValue"></mdl-slider><mdl-input label="slider value" value.bind="sliderValue"></mdl-input>
             <mdl-table columns.bind="table.columns" data.bind="table.data" style="height: 200px; overflow: auto; display: block;"></mdl-table>
         </form>

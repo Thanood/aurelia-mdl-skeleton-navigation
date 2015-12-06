@@ -16,9 +16,9 @@ export class MdlBadge {
         // componentHandler.upgradeElement(this.element);
     }
     numChanged(newValue) {
-        this.num = new Number(newValue);
-        if (this.num && this.num > 0) {
-			this.element.setAttribute('data-badge', this.num);
+        newValue = new Number(newValue);
+        if (newValue && newValue > 0) {
+			this.element.setAttribute('data-badge', newValue);
 		} else {
 			this.element.removeAttribute('data-badge');
 		}
