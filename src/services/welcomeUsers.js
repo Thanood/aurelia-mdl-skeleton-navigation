@@ -1,5 +1,10 @@
+import {inject} from 'aurelia-framework';
+import {EventAggregator} from 'aurelia-event-aggregator';
+
+@inject(EventAggregator)
 export class WelcomeUserService {
-    constructor() {
+    constructor(eventAggregator) {
+        this.eventAggregator = eventAggregator;
         this.users = [];
     }
     getUsers() {
@@ -7,5 +12,6 @@ export class WelcomeUserService {
     }
     addUser(user) {
         this.users.push(user);
+        this.eventAggregator.publish('welcomeUsers:added', user);
     }
 }

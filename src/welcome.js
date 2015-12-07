@@ -1,11 +1,13 @@
 import {computedFrom, inject} from 'aurelia-framework';
+import {EventAggregator} from 'aurelia-event-aggregator';
 // import { MdlToastService } from './aurelia-mdl/mdl-toast'; // seems not to be active yet
 import { WelcomeUserService } from './services/welcomeUsers';
 
-@inject(WelcomeUserService)
+@inject(EventAggregator, WelcomeUserService)
 export class Welcome {
 
-    constructor(welcomeUserService) {
+    constructor(eventAggregator, welcomeUserService) {
+        this.eventAggregator = eventAggregator;
         this.welcomeUserService = welcomeUserService;
         this.heading = 'Welcome to the Aurelia Navigation App!';
         this.firstName = 'John';
@@ -18,6 +20,7 @@ export class Welcome {
         this.lastNameLabel = 'Last Name';
         this.showRaised = true;
         this.sliderValue = 3;
+        this.users = [];
 
         // seems not to be active yet
         // this.toast = new MdlToastService();
@@ -29,8 +32,10 @@ export class Welcome {
                 { title: 'Phone Number', field: 'phoneNumber' },
                 { title: 'Email', field: 'email' }
             ],
-            data: this.welcomeUserService.getUsers()
+            data: this.users
         };
+
+        this.eventAggregator.subscribe('welcomeUsers:added', user => this.users.push(user));
     }
 
     //Getters can't be directly observed, so they must be dirty checked.
