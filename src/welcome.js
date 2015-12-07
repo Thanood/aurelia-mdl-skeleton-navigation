@@ -1,12 +1,17 @@
-// import {computedFrom} from 'aurelia-framework';
+import {computedFrom, inject} from 'aurelia-framework';
 // import { MdlToastService } from './aurelia-mdl/mdl-toast'; // seems not to be active yet
+import { WelcomeUserService } from './services/welcomeUsers';
 
+@inject(WelcomeUserService)
 export class Welcome {
 
-    constructor() {
+    constructor(welcomeUserService) {
+        this.welcomeUserService = welcomeUserService;
         this.heading = 'Welcome to the Aurelia Navigation App!';
         this.firstName = 'John';
         this.lastName = 'Doe';
+        this.phoneNumber = '';
+        this.email = '';
         this.previousValue = this.fullName;
 
         this.firstNameLabel = 'First Name';
@@ -21,21 +26,10 @@ export class Welcome {
             columns: [
                 { title: 'First Name', field: 'firstName' },
                 { title: 'Last Name', field: 'lastName' },
-                { title: 'Phone Number', field: 'phone' },
+                { title: 'Phone Number', field: 'phoneNumber' },
                 { title: 'Email', field: 'email' }
             ],
-            data: [
-                { firstName: 'John', lastName: 'Doe', phone: '+49123456789', email: 'john@doe.com' },
-                { firstName: 'John', lastName: 'Doe', phone: '+49123456789', email: 'john@doe.com' },
-                { firstName: 'John', lastName: 'Doe', phone: '+49123456789', email: 'john@doe.com' },
-                { firstName: 'John', lastName: 'Doe', phone: '+49123456789', email: 'john@doe.com' },
-                { firstName: 'John', lastName: 'Doe', phone: '+49123456789', email: 'john@doe.com' },
-                { firstName: 'John', lastName: 'Doe', phone: '+49123456789', email: 'john@doe.com' },
-                { firstName: 'John', lastName: 'Doe', phone: '+49123456789', email: 'john@doe.com' },
-                { firstName: 'John', lastName: 'Doe', phone: '+49123456789', email: 'john@doe.com' },
-                { firstName: 'John', lastName: 'Doe', phone: '+49123456789', email: 'john@doe.com' },
-                { firstName: 'John', lastName: 'Doe', phone: '+49123456789', email: 'john@doe.com' }
-            ]
+            data: this.welcomeUserService.getUsers()
         };
     }
 
@@ -59,6 +53,7 @@ export class Welcome {
         alert(`Welcome, ${this.fullName}!`);
         // seems not to be active yet
         // this.toast.notify(`Welcome, ${this.fullName}!`);
+        this.welcomeUserService.addUser({ firstName: this.firstName, lastName: this.lastName, phoneNumber: this.phoneNumber, email: this.email });
     }
 
     canDeactivate() {
