@@ -1,8 +1,11 @@
+import { inject, LogManager } from 'aurelia-framework';
 import 'material-design-lite';
 
+@inject(LogManager)
 export class App {
-    constructor() {
+    constructor(logManager) {
         this.rippleDuration = 1.3;
+        this.log = logManager.getLogger('navigationApp');
     }
   configureRouter(config, router) {
     config.title = 'Aurelia Navigation';
@@ -16,6 +19,7 @@ export class App {
   }
   attached() {
       componentHandler.upgradeDom();
+      this.log.warn('dom upgraded (still)', this.log);
     //   window.setTimeout(() => { this.router.title = 'changed title'; }, 2000);
   }
 }
