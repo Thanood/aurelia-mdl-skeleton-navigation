@@ -8,9 +8,18 @@ import 'material-design-lite';
     </template>
 `)
 export class MdlSlider {
-    @bindable() min = 0;
-    @bindable() max = 100;
-    @bindable() step = 1;
+    @bindable({
+        defaultBindingMode: bindingMode.oneWay,
+        defaultValue: 0
+    }) min;
+    @bindable({
+        defaultBindingMode: bindingMode.oneWay,
+        defaultValue: 100
+    }) max;
+    @bindable({
+        defaultBindingMode: bindingMode.oneWay,
+        defaultValue: 1
+    }) step;
     @bindable({
         defaultBindingMode: bindingMode.twoWay,
         defaultValue: 0
