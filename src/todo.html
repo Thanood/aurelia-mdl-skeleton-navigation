@@ -1,0 +1,19 @@
+<template>
+    <section>
+        <form role="form" submit.delegate="addTodo()">
+            <mdl-input value.bind="newTodo" label="What would you like to do?"></mdl-input>
+            <mdl-button click.trigger="addTodo()">Add</mdl-button>
+        </form>
+    </section>
+    <section class="mdl-grid">
+        <div repeat.for="todo of todos" class="mdl-card mdl-shadow--2dp mdl-cell mdl-cell--3-col">
+            <div class="mdl-card__supporting-text">Todo item</div>
+            <div class="mdl-card__title">
+                <h2 mdl-tooltip="large: true; text: double click to edit (not implemented)" class="mdl-card__title-text" style="text-decoration: ${todo.done ? 'line-through' : ''}">${todo.title}</h2>
+            </div>
+            <div class="mdl-card__actions mdl-card--border">
+                <mdl-switch checked.bind="todo.done">is done</mdl-switch>
+            </div>
+        </div>
+    </section>
+</template>
