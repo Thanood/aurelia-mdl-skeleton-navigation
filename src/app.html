@@ -1,9 +1,4 @@
 <template>
     <mdl-ripple duration.bind="rippleDuration"></mdl-ripple>
-    <mdl-app-layout router.bind="router">
-        <div class="header-content">
-            <mdl-slider style="width: 300px;" min.bind="0" max.bind="2" value.bind="rippleDuration"></mdl-slider>
-            ripple: ${rippleDuration}s
-        </div>
-    </mdl-app-layout>
+    <mdl-app-layout router.bind="router"></mdl-app-layout>
 </template>
