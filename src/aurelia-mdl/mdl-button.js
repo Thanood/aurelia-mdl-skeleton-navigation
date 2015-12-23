@@ -3,29 +3,29 @@ import 'material-design-lite';
 
 @inject(Element)
 export class MdlButton {
-    @bindable() accent = false;
-    @bindable() colored = false;
-    @bindable() primary = false;
-    @bindable() raised = true;
-    @bindable() ripple = true;
+    @bindable() accent = 'false';
+    @bindable() colored = 'false';
+    @bindable() primary = 'false';
+    @bindable() raised = 'true';
+    @bindable() ripple = 'true';
     constructor(element) {
         this.element = element;
     }
     attached() {
         let btn = this.element.querySelector('button');
-        if (this.accent) {
+        if (this.accent === 'true') {
             btn.classList.add('mdl-button--accent');
         }
-        if (this.colored) {
+        if (this.colored === 'true') {
             btn.classList.add('mdl-button--colored');
         }
-        if (this.primary) {
+        if (this.primary === 'true') {
             btn.classList.add('mdl-button--primary');
         }
-        if (this.raised) {
+        if (this.raised === 'true') {
             btn.classList.add('mdl-button--raised');
         }
-        if (this.ripple) {
+        if (this.ripple === 'true') {
             btn.classList.add('mdl-js-ripple-effect');
         }
         componentHandler.upgradeElement(btn);
