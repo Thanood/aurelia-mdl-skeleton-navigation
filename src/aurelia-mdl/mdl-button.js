@@ -1,4 +1,5 @@
 import { bindable, inject } from 'aurelia-framework';
+import { getBooleanFromAttribute } from './common/helpers';
 import 'material-design-lite';
 
 @inject(Element)
@@ -13,29 +14,31 @@ export class MdlButton {
     }
     attached() {
         let btn = this.element.querySelector('button');
-        if (this.accent === 'true') {
+        if (getBooleanFromAttribute(this.accent)) {
             btn.classList.add('mdl-button--accent');
         }
-        if (this.colored === 'true') {
+        if (getBooleanFromAttribute(this.colored)) {
             btn.classList.add('mdl-button--colored');
         }
-        if (this.primary === 'true') {
+        if (getBooleanFromAttribute(this.primary)) {
             btn.classList.add('mdl-button--primary');
         }
-        if (this.raised === 'true') {
+        if (getBooleanFromAttribute(this.raised)) {
             btn.classList.add('mdl-button--raised');
         }
-        if (this.ripple === 'true') {
+        if (getBooleanFromAttribute(this.ripple)) {
             btn.classList.add('mdl-js-ripple-effect');
         }
         componentHandler.upgradeElement(btn);
     }
     raisedChanged(newValue, oldValue) {
         let btn = this.element.querySelector('button');
-        if (newValue) {
-            btn.classList.add('mdl-button--raised');
-        } else {
-            btn.classList.remove('mdl-button--raised');
+        if (btn) {
+            if (newValue) {
+                btn.classList.add('mdl-button--raised');
+            } else {
+                btn.classList.remove('mdl-button--raised');
+            }
         }
     }
 }
