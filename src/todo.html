@@ -9,7 +9,7 @@
         <div repeat.for="todo of todos" class="mdl-card mdl-shadow--2dp mdl-cell mdl-cell--3-col">
             <div class="mdl-card__supporting-text">Todo item</div>
             <div class="mdl-card__title">
-                <h2 mdl-tooltip="large: true; text: double click to edit (not implemented)" class="mdl-card__title-text" style="text-decoration: ${todo.done ? 'line-through' : ''}">${todo.title}</h2>
+                <h2 mdl-tooltip="large: true; text: double click to edit (not implemented)" class="mdl-card__title-text" css="text-decoration: ${todo.done ? 'line-through' : ''}">${todo.title}</h2>
             </div>
             <div class="mdl-card__actions mdl-card--border">
                 <mdl-checkbox checked.bind="todo.done">is done</mdl-checkbox>
