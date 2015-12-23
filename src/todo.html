@@ -12,7 +12,7 @@
                 <h2 mdl-tooltip="large: true; text: double click to edit (not implemented)" class="mdl-card__title-text" style="text-decoration: ${todo.done ? 'line-through' : ''}">${todo.title}</h2>
             </div>
             <div class="mdl-card__actions mdl-card--border">
-                <mdl-switch checked.bind="todo.done">is done</mdl-switch>
+                <mdl-checkbox checked.bind="todo.done">is done</mdl-checkbox>
             </div>
         </div>
     </section>

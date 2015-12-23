@@ -4,6 +4,7 @@ export function configure(config) {
     config.globalResources('./mdl-app-layout.html');
     config.globalResources('./mdl-badge');
     config.globalResources('./mdl-button');
+    config.globalResources('./mdl-checkbox');
     config.globalResources('./mdl-content.html');
     config.globalResources('./mdl-drawer.html');
     config.globalResources('./mdl-header.html');
