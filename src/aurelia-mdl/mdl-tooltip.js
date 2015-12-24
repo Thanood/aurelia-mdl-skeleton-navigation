@@ -31,6 +31,6 @@ export class MdlToolTip {
         //     this.element.insertAdjacentHTML('afterend', tooltip);
         // }
         target.insertAdjacentHTML('afterend', tooltip);
-        componentHandler.upgradeElement(target.parentNode.querySelector('.mdl-tooltip'));
+        componentHandler.upgradeElement(target.parentNode.querySelector(`.mdl-tooltip[for="${this.element.id}"]`));
     }
 }
