@@ -10,6 +10,7 @@ export function configure(config) {
     config.globalResources('./mdl-header.html');
     config.globalResources('./mdl-input');
     config.globalResources('./mdl-nav.html');
+    config.globalResources('./mdl-radio');
     config.globalResources('./mdl-slider');
     config.globalResources('./mdl-switch');
     config.globalResources('./mdl-table.html');

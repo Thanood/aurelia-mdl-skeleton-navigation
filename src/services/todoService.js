@@ -21,11 +21,13 @@ export class TodoService {
         this.eventAggregator = eventAggregator;
         this.todoStorage = todoStorage;
         this.todos = this.todoStorage.getItem('todos') || [];
+        this.todos.forEach(todo => todo.priority = todo.priority || 'med');
     }
     getTodos() {
         return this.todos;
     }
     addTodo(todo) {
+        todo.priority = todo.priority || 'med';
         this.todos.push(todo);
         this.todoStorage.setItem('todos', this.todos);
         this.eventAggregator.publish('todoService:added', todo);
