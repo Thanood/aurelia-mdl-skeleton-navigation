@@ -1,0 +1,12 @@
+<template class="mdl-card mdl-shadow--2dp mdl-cell mdl-cell--3-col">
+    <div class="mdl-card__supporting-text">Todo item</div>
+    <div class="mdl-card__title">
+        <h2 mdl-tooltip="large: true; text: double click to edit (not implemented)" class="mdl-card__title-text" css="text-decoration: ${todo.done ? 'line-through' : ''}">${todo.title}</h2>
+    </div>
+    <div class="mdl-card__actions mdl-card--border">
+        <mdl-checkbox mdl-tooltip="text: set done" checked.bind="todo.done">is done</mdl-checkbox>
+        <mdl-radio name="priority" value="low" checked.bind="todo.priority">low prio</mdl-radio>
+        <mdl-radio name="priority" value="med" checked.bind="todo.priority">med prio</mdl-radio>
+        <mdl-radio name="priority" value="high" checked.bind="todo.priority">high prio</mdl-radio>
+    </div>
+</template>
