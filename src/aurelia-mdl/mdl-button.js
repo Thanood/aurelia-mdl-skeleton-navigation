@@ -4,6 +4,7 @@ import 'material-design-lite';
 
 @inject(Element)
 export class MdlButton {
+    @bindable() disabled = false;
     @bindable() accent = 'false';
     @bindable() colored = 'false';
     @bindable() primary = 'false';

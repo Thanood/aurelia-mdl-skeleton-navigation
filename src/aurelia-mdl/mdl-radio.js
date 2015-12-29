@@ -5,12 +5,13 @@ import 'material-design-lite';
 @inlineView(`
     <template>
     <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect">
-        <input name.one-time="name" value.one-time="value" type="radio" class="mdl-radio__button" checked.bind="checked" />
+        <input name.one-time="name" value.one-time="value" type="radio" class="mdl-radio__button" checked.bind="checked" disabled.bind="disabled"/>
         <span class="mdl-radio__label"><content></content></span>
     </label>
     </template>
 `)
 export class MdlRadio {
+    @bindable disabled = false;
     @bindable({
         defaultBindingMode: bindingMode.twoWay,
         defaultValue: true

@@ -5,12 +5,13 @@ import 'material-design-lite';
 @inlineView(`
     <template>
     <label class="mdl-switch mdl-js-switch mdl-js-ripple-effect">
-        <input type="checkbox" class="mdl-switch__input" checked.bind="checked" />
+        <input type="checkbox" class="mdl-switch__input" checked.bind="checked" disabled.bind="disabled" />
         <span class="mdl-switch__label"><content></content></span>
     </label>
     </template>
 `)
 export class MdlSwitch {
+    @bindable disabled = false;
     @bindable({
         defaultBindingMode: bindingMode.twoWay,
         defaultValue: true

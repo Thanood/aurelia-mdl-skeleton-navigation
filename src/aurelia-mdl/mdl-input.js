@@ -4,6 +4,7 @@ import 'material-design-lite';
 @inject(Element)
 export class MdlInput {
     @bindable() label = '';
+    @bindable() disabled = false;
     @bindable({
         defaultBindingMode: bindingMode.twoWay,
         defaultValue: ''
