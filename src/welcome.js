@@ -18,6 +18,7 @@ export class Welcome {
 
         this.firstNameLabel = 'First Name';
         this.lastNameLabel = 'Last Name';
+        this.buttonDisabled = false;
         this.showRaised = true;
         this.sliderValue = 3;
         this.users = [];
