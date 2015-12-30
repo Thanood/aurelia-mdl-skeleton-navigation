@@ -54,9 +54,11 @@ export class Welcome {
         window.setTimeout(() => this.lastNameLabel = "That same person's last name", 1000);
     }
 
-    submit() {
+    submit($event) {
         this.previousValue = this.fullName;
         alert(`Welcome, ${this.fullName}!`);
+        // console.log(`Welcome, ${this.fullName}!`, $event);
+        
         // seems not to be active yet
         // this.toast.notify(`Welcome, ${this.fullName}!`);
         this.welcomeUserService.addUser({ firstName: this.firstName, lastName: this.lastName, phoneNumber: this.phoneNumber, email: this.email });

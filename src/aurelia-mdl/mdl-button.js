@@ -1,7 +1,12 @@
-import { bindable, inject } from 'aurelia-framework';
+import { bindable, inject, inlineView } from 'aurelia-framework';
 import { getBooleanFromAttribute } from './common/helpers';
 import 'material-design-lite';
 
+@inlineView(`
+    <template>
+        <button type="button" class="mdl-button mdl-js-button" click.trigger="clicked($event, 'button')"><content /></button>
+    </template>
+`)
 @inject(Element)
 export class MdlButton {
     @bindable() disabled = false;
@@ -32,6 +37,16 @@ export class MdlButton {
         }
         componentHandler.upgradeElement(btn);
     }
+    disabledChanged(newValue) {
+        let btn = this.element.querySelector('button');
+        if (newValue) {
+            // this.element.setAttribute('disabled', 'disabled');
+            btn.classList.add('mdl-button--disabled');
+        } else {
+            // this.element.removeAttribute('disabled');
+            btn.classList.remove('mdl-button--disabled');
+        }
+    }
     raisedChanged(newValue, oldValue) {
         let btn = this.element.querySelector('button');
         if (btn) {
@@ -40,6 +55,12 @@ export class MdlButton {
             } else {
                 btn.classList.remove('mdl-button--raised');
             }
+        }
+    }
+    clicked($event, src) {
+        if (this.disabled === true) {
+            $event.cancelBubble = true;
+            $event.preventDefault();
         }
     }
 }
