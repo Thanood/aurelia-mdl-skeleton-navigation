@@ -39,7 +39,9 @@
             <mdl-slider style="width: 300px;" value.bind="sliderValue"></mdl-slider><mdl-input label="slider value" value.bind="sliderValue"></mdl-input>
             
             <div>
-                <div mdl-spinner="is-active.bind: spinnerActive"></div><mdl-button click.trigger="toggleSpinnerActive()">toggle spinner</mdl-button>
+                <div mdl-spinner="is-active.bind: spinnerActive;"></div>
+                <mdl-button click.trigger="toggleSpinnerActive()">toggle spinner</mdl-button>
+                <div mdl-spinner="is-active.bind: spinnerActive; single-color: true;"></div>
             </div>
             
             <mdl-table columns.bind="table.columns" data.bind="table.data" style="height: 200px; overflow: auto; display: block;"></mdl-table>

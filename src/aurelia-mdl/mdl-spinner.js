@@ -10,6 +10,7 @@ export class MdlSpinner {
         changeHandler: 'isActiveChanged',
         name: 'isActive'
     }) isActive = false;
+    @bindable() singleColor = false;
     
     constructor(element) {
         this.element = element;
@@ -21,6 +22,9 @@ export class MdlSpinner {
         ];
         if (this.isActive) {
             classes.push('is-active');
+        }
+        if (this.singleColor) {
+            classes.push('mdl-spinner--single-color');
         }
         classes.forEach(c => this.element.classList.add(c));
         

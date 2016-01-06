@@ -21,7 +21,7 @@ export class Welcome {
         this.buttonDisabled = false;
         this.showRaised = true;
         this.sliderValue = 3;
-        this.spinnerActive = true;
+        this.spinnerActive = false;
         this.users = [];
 
         // seems not to be active yet
