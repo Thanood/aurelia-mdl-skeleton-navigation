@@ -21,6 +21,7 @@ export class Welcome {
         this.buttonDisabled = false;
         this.showRaised = true;
         this.sliderValue = 3;
+        this.spinnerActive = true;
         this.users = [];
 
         // seems not to be active yet
@@ -62,6 +63,10 @@ export class Welcome {
         // seems not to be active yet
         // this.toast.notify(`Welcome, ${this.fullName}!`);
         this.welcomeUserService.addUser({ firstName: this.firstName, lastName: this.lastName, phoneNumber: this.phoneNumber, email: this.email });
+    }
+    
+    toggleSpinnerActive() {
+        this.spinnerActive = !this.spinnerActive;
     }
 
     canDeactivate() {

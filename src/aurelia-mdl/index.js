@@ -12,6 +12,7 @@ export function configure(config) {
     config.globalResources('./mdl-nav.html');
     config.globalResources('./mdl-radio');
     config.globalResources('./mdl-slider');
+    config.globalResources('./mdl-spinner');
     config.globalResources('./mdl-switch');
     config.globalResources('./mdl-table.html');
     config.globalResources('./mdl-tooltip');
