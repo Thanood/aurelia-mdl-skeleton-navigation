@@ -37,7 +37,7 @@
             <!-- not sure why this needs to be span - div doesn't work -->
             <span mdl-badge="num.bind: sliderValue;">badge test</span>
             <mdl-slider style="width: 300px;" value.bind="sliderValue"></mdl-slider><mdl-input label="slider value" value.bind="sliderValue"></mdl-input>
-            
+            <mdl-progress style="width: 300px;" progress.bind="sliderValue"></mdl-progress>
             <div>
                 <div mdl-spinner="is-active.bind: spinnerActive;"></div>
                 <mdl-button click.trigger="toggleSpinnerActive()">toggle spinner</mdl-button>
