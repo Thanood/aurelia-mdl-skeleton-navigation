@@ -19,7 +19,7 @@ System.config({
     "aurelia-dependency-injection": "npm:aurelia-dependency-injection@1.0.0-beta.1",
     "aurelia-event-aggregator": "npm:aurelia-event-aggregator@1.0.0-beta.1",
     "aurelia-fetch-client": "npm:aurelia-fetch-client@1.0.0-beta.1.0.2",
-    "aurelia-framework": "npm:aurelia-framework@1.0.0-beta.1.0.6",
+    "aurelia-framework": "npm:aurelia-framework@1.0.0-beta.1.0.7",
     "aurelia-history": "npm:aurelia-history@1.0.0-beta.1",
     "aurelia-history-browser": "npm:aurelia-history-browser@1.0.0-beta.1.0.1",
     "aurelia-loader": "npm:aurelia-loader@1.0.0-beta.1",
@@ -72,7 +72,7 @@ System.config({
     },
     "npm:aurelia-bootstrapper@1.0.0-beta.1": {
       "aurelia-event-aggregator": "npm:aurelia-event-aggregator@1.0.0-beta.1",
-      "aurelia-framework": "npm:aurelia-framework@1.0.0-beta.1.0.6",
+      "aurelia-framework": "npm:aurelia-framework@1.0.0-beta.1.0.7",
       "aurelia-history": "npm:aurelia-history@1.0.0-beta.1",
       "aurelia-history-browser": "npm:aurelia-history-browser@1.0.0-beta.1.0.1",
       "aurelia-loader-default": "npm:aurelia-loader-default@1.0.0-beta.1.0.1",
@@ -98,7 +98,7 @@ System.config({
     "npm:aurelia-fetch-client@1.0.0-beta.1.0.2": {
       "core-js": "npm:core-js@1.2.6"
     },
-    "npm:aurelia-framework@1.0.0-beta.1.0.6": {
+    "npm:aurelia-framework@1.0.0-beta.1.0.7": {
       "aurelia-binding": "npm:aurelia-binding@1.0.0-beta.1.0.3",
       "aurelia-dependency-injection": "npm:aurelia-dependency-injection@1.0.0-beta.1",
       "aurelia-loader": "npm:aurelia-loader@1.0.0-beta.1",

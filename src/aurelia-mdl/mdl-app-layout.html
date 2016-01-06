@@ -1,5 +1,4 @@
 <template bindable="router">
-    <require from="./mdl-button.html"></require>
     <require from="./mdl-layout.html"></require>
     <require from="./mdl-header.html"></require>
     <require from="./mdl-drawer.html"></require>
@@ -16,9 +15,6 @@
                 <mdl-slider style="width: 150px;" min.one-time="0.1" max.one-time="3.0" step.one-time="0.1" value.bind="rippleDuration"></mdl-slider>
                 ripple: ${rippleDuration}s
             </div>
-            <!--<div>
-                <mdl-button raised="false">Hide drawer</mdl-button>
-            </div>-->
             <content select=".drawer-content"></content>
         </mdl-drawer>
         <mdl-content>
