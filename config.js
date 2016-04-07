@@ -42,7 +42,7 @@ System.config({
     "css": "github:systemjs/plugin-css@0.1.20",
     "fetch": "github:github/fetch@0.9.0",
     "font-awesome": "npm:font-awesome@4.5.0",
-    "material-design-lite": "github:google/material-design-lite@1.0.6",
+    "material-design-lite": "github:google/material-design-lite@1.1.3",
     "text": "github:systemjs/plugin-text@0.0.2",
     "github:jspm/nodelibs-assert@0.1.0": {
       "assert": "npm:assert@1.3.0"
